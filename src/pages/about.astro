@@ -7,41 +7,38 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'Empresa',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
+    <Hero
+    tagline="Empresa"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: '~/assets/images/empresa-optymia.jpg',
+      alt: 'Optymia empresa de analítica avanzada y optimización de procesos',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      Ingeniería, analítica avanzada y tecnología aplicada para <span class="text-accent dark:text-white">optimizar procesos y calidad</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Optymia es una empresa orientada al desarrollo e implementación de soluciones tecnológicas, analíticas y de software para mejorar la eficiencia operacional, el control de calidad y la toma de decisiones en entornos industriales y organizacionales complejos.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    title="Statistics about us"
+    <Stats
+    title="Nuestro enfoque"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { amount: 'Analítica', title: 'Modelos predictivos y clasificación para apoyar decisiones operacionales' },
+      { amount: 'Optimización', title: 'Reducción de variabilidad, mermas, reprocesos y costos' },
+      { amount: 'Trazabilidad', title: 'Integración de datos, control de versiones y reportabilidad' },
+      { amount: 'Tecnología', title: 'Software, BI, automatización y soluciones aplicadas a la industria' },
     ]}
   />
 

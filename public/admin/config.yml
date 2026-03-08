@@ -10,9 +10,13 @@ collections:
     label: 'Post'
     folder: 'src/data/post'
     create: true
+    slug: '{{slug}}'
     fields:
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: true }
+      - { label: 'Author', name: 'author', widget: 'string', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'string' }
       - { label: 'Category', name: 'category', widget: 'string' }
       - {
           label: 'Tags',
@@ -23,7 +27,10 @@ collections:
           collapsed: false,
           field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
-      - { label: 'Image', name: 'image', widget: 'string' }
-      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - label: 'Metadata'
+        name: 'metadata'
+        widget: 'object'
+        required: false
+        fields:
+          - { label: 'Canonical', name: 'canonical', widget: 'string', required: false }
       - { label: 'Content', name: 'body', widget: 'markdown' }

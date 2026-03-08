@@ -1,0 +1,285 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Soluciones',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Soluciones"
+    title="Explora nuestra oferta"
+    subtitle="En Optymia diseñamos e implementamos soluciones analíticas, tecnológicas y de software orientadas a resolver problemas reales de operación, control y trazabilidad en entornos industriales y organizacionales complejos."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicitar diagnóstico',
+        href: '/contacto',
+        class: '!bg-[#003060] hover:!bg-[#00264d] !border-[#003060] !text-white',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/soluciones-optymia2.png',
+      alt: 'Soluciones tecnológicas y analítica avanzada para la industria',
+    }}
+  />
+
+  <Features2
+    title="Cómo abordamos las soluciones"
+    subtitle="No implementamos tecnología por sí sola. Diseñamos soluciones en función del problema, los datos disponibles, el contexto operacional y el impacto esperado."
+    columns={3}
+    items={[
+      {
+        title: 'Diagnóstico del problema',
+        description:
+          'Levantamos procesos, brechas, fuentes de datos y objetivos para definir una solución técnicamente viable y alineada con el negocio.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Diseño de solución',
+        description:
+          'Seleccionamos la combinación adecuada de analítica, software, automatización, BI o herramientas de medición según el caso.',
+        icon: 'tabler:settings-cog',
+      },
+      {
+        title: 'Implementación con impacto',
+        description:
+          'Priorizamos soluciones que mejoren calidad, trazabilidad, eficiencia y capacidad de decisión, con foco en adopción y resultados.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Qué resuelve',
+        description:
+          'Permite anticipar comportamientos, clasificar eventos o condiciones y detectar patrones relevantes para calidad, eficiencia, mantenimiento o riesgo.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Impacto esperado',
+        description:
+          'Mejor capacidad predictiva, decisiones más informadas, reducción de incertidumbre y mayor aprovechamiento de los datos disponibles.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Cuándo conviene',
+        description:
+          'Cuando la organización ya dispone de datos históricos, registros operacionales o variables de proceso que pueden transformarse en conocimiento accionable.',
+        icon: 'tabler:database',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solucion-analitica3.png',
+      alt: 'Analítica avanzada e inteligencia artificial',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Analítica avanzada e inteligencia artificial
+      </h3>
+      Modelos predictivos y de clasificación para transformar datos en decisiones operacionales.
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Qué resuelve',
+        description:
+          'Aborda variabilidad, mermas, reprocesos, ineficiencias y desalineaciones entre operación, control y calidad.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'Impacto esperado',
+        description:
+          'Procesos más estables, menor dispersión operacional, reducción de pérdidas y mejor desempeño global.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Cuándo conviene',
+        description:
+          'Cuando existen cuellos de botella, inconsistencias de proceso, alta variabilidad o presión por mejorar eficiencia y control.',
+        icon: 'tabler:adjustments',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solucion-procesos2.png',
+      alt: 'Optimización de procesos',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Optimización de procesos
+      </h3>
+      Aplicamos modelamiento, análisis y automatización para mejorar desempeño operacional y reducir desperdicios.
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Qué resuelve',
+        description:
+          'Entrega visibilidad sobre KPIs, desempeño, tendencias y desvíos, integrando información para supervisión y gestión.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Impacto esperado',
+        description:
+          'Mayor trazabilidad, acceso a información relevante en tiempo real y mejor coordinación entre áreas.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Cuándo conviene',
+        description:
+          'Cuando la información está dispersa, los reportes son manuales o la toma de decisiones depende de consolidaciones lentas.',
+        icon: 'tabler:clock-hour-4',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solucion-bi1.png',
+      alt: 'Business Intelligence y dashboards',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Business Intelligence y dashboards
+      </h3>
+      Visualización ejecutiva y operacional para convertir datos en control y toma de decisiones.
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Qué resuelve',
+        description:
+          'Permite construir herramientas específicas para captura, gestión, interpretación y visualización de información.',
+        icon: 'tabler:device-desktop-code',
+      },
+      {
+        title: 'Impacto esperado',
+        description:
+          'Mayor adaptación al proceso real, mejor experiencia de uso y soluciones alineadas a requerimientos específicos.',
+        icon: 'tabler:apps',
+      },
+      {
+        title: 'Cuándo conviene',
+        description:
+          'Cuando las herramientas existentes no cubren las necesidades del proceso o se requiere una plataforma especializada.',
+        icon: 'tabler:tool',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solucion-software.png',
+      alt: 'Desarrollo de software y plataformas',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Desarrollo de software y plataformas
+      </h3>
+      Aplicaciones y plataformas para resolver necesidades específicas de operación, gestión y análisis.
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Qué resuelve',
+        description:
+          'Fortalece control analítico, trazabilidad metrológica, integración de mediciones y soporte a sistemas de calidad.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Impacto esperado',
+        description:
+          'Mayor confiabilidad en los datos, mejor control de calidad y procesos más robustos desde el punto de vista técnico.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Cuándo conviene',
+        description:
+          'Cuando la organización requiere fortalecer laboratorios, control de equipos, validación de datos o estándares de calidad.',
+        icon: 'tabler:microscope',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solucion-calidad.png',
+      alt: 'Calidad, laboratorio y metrología',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Calidad, laboratorio y metrología
+      </h3>
+      Soporte técnico y analítico para fortalecer calidad, medición y trazabilidad en procesos críticos.
+    </Fragment>
+  </Content>
+
+  <Features2
+    title="Tecnologías y capacidades que pueden integrarse"
+    subtitle="Cada solución puede incorporar distintas herramientas según el caso, el nivel de madurez de datos y el objetivo del proyecto."
+    columns={3}
+    items={[
+      {
+        title: 'Ciencia de datos',
+        description: 'Modelamiento estadístico, machine learning y análisis avanzado de información.',
+        icon: 'tabler:math-function',
+      },
+      {
+        title: 'NIR y quimiometría',
+        description: 'Tecnologías analíticas para clasificación, control y monitoreo de variables críticas.',
+        icon: 'tabler:wave-sine',
+      },
+      {
+        title: 'Automatización',
+        description: 'Flujos automáticos de reportes, integración de datos y reducción de tareas manuales.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Dashboards',
+        description: 'Visualización ejecutiva y operacional con foco en KPIs, tendencias y trazabilidad.',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: 'Software a medida',
+        description: 'Herramientas específicas para necesidades que no resuelven soluciones genéricas.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Transferencia tecnológica',
+        description: 'Capacitación y acompañamiento para asegurar adopción efectiva de la solución.',
+        icon: 'tabler:school',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicitar diagnóstico tecnológico',
+        href: '/contacto',
+        class: '!bg-[#003060] hover:!bg-[#00264d] !border-[#003060] !text-white',
+      },
+    ]}
+    title="Conversemos sobre la solución adecuada para tu organización"
+    subtitle="Podemos evaluar tus procesos, tus datos disponibles y las oportunidades de mejora para diseñar una solución analítica y tecnológica con impacto real."
+  />
+</Layout>

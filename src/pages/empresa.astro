@@ -1,0 +1,201 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Empresa',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+    <Hero
+    tagline="Empresa"
+    image={{
+      src: '~/assets/images/empresa-optymia.png',
+      alt: 'Optymia empresa de analítica avanzada y optimización de procesos',
+    }}
+  >
+    <Fragment slot="title">
+      ¿Quienés Somos?<span class="text-accent dark:text-white"></span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Somos una empresa orientada al desarrollo e implementación de soluciones tecnológicas, analíticas y de software para mejorar la eficiencia operacional, el control de calidad y la toma de decisiones en entornos industriales y organizacionales complejos.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+    <Stats
+  title="Impacto de la analítica avanzada en procesos industriales"
+  stats={[
+    { amount: '30–60%', title: 'reducción potencial en tiempos de análisis de calidad' },
+    { amount: '10–25%', title: 'disminución de variabilidad en procesos productivos' },
+    { amount: '80%+', title: 'automatización de reportes y trazabilidad de datos' },
+    { amount: '24/7', title: 'monitoreo y análisis continuo de indicadores operacionales' },
+  ]}
+/>
+
+  <!-- Features3 Widget ************** -->
+
+    <Features3
+    title="¿Qué hacemos?"
+    subtitle="Combinamos ciencia aplicada, tecnología y análisis avanzado para diseñar soluciones que mejoran la operación, la calidad y la toma de decisiones."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Analítica avanzada',
+        description:
+          'Desarrollamos modelos predictivos y de clasificación para apoyar decisiones en calidad, eficiencia operacional, mantenimiento y riesgo.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Software y plataformas',
+        description:
+          'Diseñamos e implementamos aplicaciones, dashboards y plataformas para captura, gestión, visualización e interpretación de datos.',
+        icon: 'tabler:device-desktop-code',
+      },
+      {
+        title: 'Optimización de procesos',
+        description:
+          'Aplicamos analítica, automatización y modelamiento para reducir variabilidad, mermas, reprocesos y costos operacionales.',
+        icon: 'tabler:activity',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+  title="Áreas de especialización"
+  subtitle="Integramos ciencia de datos, tecnología y conocimiento industrial para mejorar la calidad, la eficiencia y la trazabilidad de los procesos."
+  columns={3}
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Ciencia de datos aplicada',
+      description:
+        'Aplicación de modelos estadísticos, machine learning y analítica avanzada para entender y optimizar procesos industriales.',
+      icon: 'tabler:chart-line',
+    },
+    {
+      title: 'Espectroscopía NIR y quimiometría',
+      description:
+        'Implementación de soluciones analíticas basadas en espectroscopía NIR para control de calidad, clasificación y monitoreo de procesos.',
+      icon: 'tabler:flask',
+    },
+    {
+      title: 'Business Intelligence',
+      description:
+        'Diseño de dashboards ejecutivos y sistemas de visualización que permiten monitorear indicadores clave de operación y calidad.',
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: 'Integración de datos',
+      description:
+        'Conexión de distintas fuentes de información para construir arquitecturas de datos que soporten decisiones trazables.',
+      icon: 'tabler:database',
+    },
+    {
+      title: 'Automatización de reportes',
+      description:
+        'Automatización de flujos de información, generación de reportes y control de versiones para mejorar la gestión operativa.',
+      icon: 'tabler:automation',
+    },
+    {
+      title: 'Transferencia tecnológica',
+      description:
+        'Capacitación técnica, implementación de soluciones y acompañamiento para integrar analítica y tecnología en la operación.',
+      icon: 'tabler:school',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/empresa-tecnologia.png',
+    alt: 'Tecnología, datos y analítica avanzada en industria',
+  }}
+/>
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+  title="Principios que guían nuestro trabajo"
+  subtitle="En Optymia creemos que la tecnología y la analítica deben estar al servicio de decisiones más informadas, procesos más eficientes y organizaciones más competitivas."
+  items={[
+    {
+      title: 'Rigor analítico',
+      description:
+        'Aplicamos metodologías científicas, modelos estadísticos y análisis de datos para generar soluciones confiables y trazables.',
+    },
+    {
+      title: 'Enfoque en impacto',
+      description:
+        'Cada proyecto busca generar mejoras concretas en eficiencia, calidad, control operacional o toma de decisiones.',
+    },
+    {
+      title: 'Integración tecnológica',
+      description:
+        'Diseñamos soluciones que se integran con los sistemas y procesos existentes, priorizando continuidad operacional.',
+    },
+  ]}
+>
+<Fragment slot="bg">
+    <div class="absolute inset-0 bg-gray-50 dark:bg-transparent"></div>
+  </Fragment>
+</Steps2>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <!-- Features2 Widget ************** -->
+
+    <Features2
+    title="Sectores donde generamos impacto"
+    tagline="Industrias"
+    columns={4}
+    items={[
+      {
+        title: 'Minería',
+        description: 'Optimización operacional, monitoreo de variables críticas y análisis para mejorar eficiencia y control.',
+      },
+      {
+        title: 'Alimentos',
+        description: 'Control de calidad, trazabilidad, analítica de procesos y aplicación de tecnologías de medición.',
+      },
+      {
+        title: 'Manufactura',
+        description: 'Reducción de variabilidad, automatización de reportes y soporte a decisiones basadas en datos.',
+      },
+      {
+        title: 'Laboratorios',
+        description: 'Gestión de datos, control analítico, trazabilidad metrológica y estandarización de procesos.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+    <Features2
+  title="¿Quieres optimizar procesos o mejorar el control de calidad en tu organización?"
+  tagline="Hablemos"
+  columns={2}
+  items={[
+    {
+      title: 'Solicitar diagnóstico',
+      description:
+        'Conversemos sobre tus procesos, datos disponibles y oportunidades de mejora. Podemos evaluar cómo aplicar analítica avanzada, automatización o desarrollo de software en tu organización.',
+      icon: 'tabler:chart-dots',
+    },
+    {
+      title: 'Explorar soluciones',
+      description:
+        'Descubre cómo las tecnologías de analítica, ciencia de datos, NIR, automatización y Business Intelligence pueden generar mejoras reales en eficiencia y calidad.',
+      icon: 'tabler:bulb',
+    },
+  ]}
+/>
+</Layout>

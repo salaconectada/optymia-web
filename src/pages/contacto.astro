@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contacto',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Contacto"
+    title="Hablemos sobre tu proyecto"
+  />
+
+  <ContactUs
+    id="form"
+    title="Escríbenos y conversemos"
+    subtitle="Si estás evaluando una solución analítica, tecnológica o de optimización de procesos, completa el formulario y nuestro equipo te responderá a la brevedad."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Correo electrónico',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Teléfono',
+      },
+      {
+        type: 'text',
+        name: 'company',
+        label: 'Empresa',
+      },
+    ]}
+    textarea={{
+      label: 'Mensaje',
+    }}
+    disclaimer={{
+      label:
+        'Al enviar este formulario, autorizas el uso de tus datos de contacto para responder tu solicitud y coordinar una conversación comercial o técnica.',
+    }}
+    description="Te responderemos a la brevedad para revisar tu requerimiento."
+  />
+
+  <Features2
+    title="Información de contacto"
+    subtitle="También puedes comunicarte con nosotros a través de los siguientes canales."
+    columns={3}
+    items={[
+      {
+        title: 'Correo electrónico',
+        description: 'contacto@optymia.cl',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Teléfono',
+        description: '+56 9 5000 4950',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Cobertura',
+        description: 'Chile · Atención remota y coordinación de proyectos',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,369 @@
+---
+const whatsappNumber = '56950004950';
+---
+
+<div id="optymia-chatbot" class="fixed bottom-5 right-5 z-[9999]">
+  <!-- Burbuja de atención -->
+  <div id="chatbot-nudge" class="mb-3 flex justify-end">
+    <button
+      type="button"
+      class="group relative rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left shadow-lg transition hover:shadow-xl"
+      aria-label="Abrir asistente de Optymia"
+    >
+      <span class="absolute -right-1 -top-1 flex h-3 w-3">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#005090] opacity-75"></span>
+        <span class="relative inline-flex h-3 w-3 rounded-full bg-[#003060]"></span>
+      </span>
+      <div class="text-sm font-semibold text-[#003060]">¿Necesitas optimizar un proceso?</div>
+      <div class="text-xs text-slate-500">Te ayudamos a identificar la mejor solución.</div>
+    </button>
+  </div>
+
+  <!-- Botón flotante -->
+  <div class="flex justify-end">
+    <button
+      id="chatbot-toggle"
+      type="button"
+      class="flex items-center gap-2 rounded-full bg-[#003060] px-5 py-3 text-white shadow-2xl transition hover:bg-[#00264d] hover:scale-[1.02]"
+      aria-label="Abrir chatbot"
+    >
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="absolute inline-flex h-full w-full animate-pulse rounded-full bg-cyan-300 opacity-90"></span>
+        <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-200"></span>
+      </span>
+      <span class="font-semibold">Hablemos</span>
+    </button>
+  </div>
+
+  <!-- Ventana -->
+  <div
+    id="chatbot-window"
+    class="mt-3 hidden w-[380px] max-w-[92vw] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl"
+  >
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-[#003060] to-[#005090] px-5 py-4 text-white">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold">Optymia</h3>
+          <p class="text-sm text-white/85">Asistente de contacto</p>
+        </div>
+        <button
+          id="chatbot-close"
+          type="button"
+          class="rounded-full px-2 py-1 text-white/80 transition hover:bg-white/10 hover:text-white"
+          aria-label="Cerrar chatbot"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="bg-white p-4">
+      <!-- Paso 1 -->
+      <section id="chat-step-1" class="space-y-4">
+        <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
+          Hola, soy el asistente de Optymia. ¿Qué te gustaría hacer?
+        </div>
+
+        <div class="grid gap-2">
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Analítica avanzada e IA">
+            Analítica avanzada e IA
+          </button>
+
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Optimización de procesos">
+            Optimización de procesos
+          </button>
+
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Business Intelligence y dashboards">
+            Business Intelligence y dashboards
+          </button>
+
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Desarrollo de software">
+            Desarrollo de software
+          </button>
+
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Agendar reunión">
+            Agendar reunión
+          </button>
+
+          <button class="chat-option rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-[#003060] hover:bg-slate-50" data-value="Otro / Personalizado">
+            Otro / Personalizado
+          </button>
+        </div>
+      </section>
+
+      <!-- Paso 2 -->
+      <section id="chat-step-2" class="hidden space-y-4">
+        <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
+          Excelente. Déjanos tus datos y continuemos.
+        </div>
+
+        <form id="chatbot-form-step-1" class="space-y-3">
+          <input id="chat-topic" name="tema" type="hidden" />
+
+          <div>
+            <label class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">Nombre *</label>
+            <input
+              name="nombre"
+              type="text"
+              required
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#003060]"
+              placeholder="Tu nombre"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">Email *</label>
+            <input
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#003060]"
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">Teléfono *</label>
+            <input
+              name="telefono"
+              type="tel"
+              required
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#003060]"
+              placeholder="+56 9 ..."
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">Empresa</label>
+            <input
+              name="empresa"
+              type="text"
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#003060]"
+              placeholder="Nombre de tu empresa (opcional)"
+            />
+          </div>
+
+          <div class="flex gap-2 pt-2">
+            <button
+              id="chat-back-1"
+              type="button"
+              class="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+            >
+              Volver
+            </button>
+            <button
+              type="submit"
+              class="flex-1 rounded-xl bg-[#003060] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#00264d]"
+            >
+              Continuar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Paso 3 -->
+      <section id="chat-step-3" class="hidden space-y-4">
+        <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
+          Cuéntanos un poco más. ¿Qué problema, dolor o necesidad quieres resolver?
+        </div>
+
+        <form id="chatbot-form-step-2" class="space-y-3">
+          <div>
+            <label class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500">Detalles del proyecto *</label>
+            <textarea
+              id="chat-details"
+              name="detalle"
+              rows="5"
+              required
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#003060]"
+              placeholder="Ej.: tenemos reportes manuales, alta variabilidad en producción, dificultad para integrar datos, problemas de trazabilidad, etc."
+            ></textarea>
+          </div>
+
+          <div class="flex gap-2 pt-2">
+            <button
+              id="chat-back-2"
+              type="button"
+              class="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+            >
+              Volver
+            </button>
+            <button
+              type="submit"
+              class="flex-1 rounded-xl bg-[#003060] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#00264d]"
+            >
+              Enviar solicitud
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Paso 4 -->
+      <section id="chat-step-4" class="hidden space-y-4">
+        <div class="rounded-2xl border border-green-200 bg-green-50 px-4 py-4">
+          <div class="mb-2 text-sm font-bold text-green-800">¡Gracias por tu contacto!</div>
+          <p class="text-sm leading-relaxed text-green-700">
+            Hemos recibido tu solicitud. Un funcionario de Optymia te responderá a la brevedad para revisar tu caso y orientarte en la mejor solución.
+          </p>
+        </div>
+
+        <div class="flex gap-2">
+          <a
+            id="chatbot-whatsapp"
+            href="#"
+            target="_blank"
+            class="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+          >
+            Ir a WhatsApp
+          </a>
+          <button
+            id="chatbot-restart"
+            type="button"
+            class="flex-1 rounded-xl bg-[#003060] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#00264d]"
+          >
+            Cerrar
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ whatsappNumber }}>
+  const toggleBtn = document.getElementById('chatbot-toggle');
+  const closeBtn = document.getElementById('chatbot-close');
+  const nudgeBtn = document.getElementById('chatbot-nudge');
+  const windowBox = document.getElementById('chatbot-window');
+
+  const step1 = document.getElementById('chat-step-1');
+  const step2 = document.getElementById('chat-step-2');
+  const step3 = document.getElementById('chat-step-3');
+  const step4 = document.getElementById('chat-step-4');
+
+  const topicInput = document.getElementById('chat-topic');
+  const detailsInput = document.getElementById('chat-details');
+
+  const formStep1 = document.getElementById('chatbot-form-step-1');
+  const formStep2 = document.getElementById('chatbot-form-step-2');
+
+  const back1 = document.getElementById('chat-back-1');
+  const back2 = document.getElementById('chat-back-2');
+  const restartBtn = document.getElementById('chatbot-restart');
+  const whatsappLink = document.getElementById('chatbot-whatsapp');
+
+  const optionButtons = document.querySelectorAll('.chat-option');
+
+  let leadData = {
+    tema: '',
+    nombre: '',
+    email: '',
+    telefono: '',
+    empresa: '',
+    detalle: '',
+  };
+
+  function openChat() {
+    windowBox?.classList.remove('hidden');
+    nudgeBtn?.classList.add('hidden');
+  }
+
+  function closeChat() {
+    windowBox?.classList.add('hidden');
+  }
+
+  function showStep(stepNumber) {
+    [step1, step2, step3, step4].forEach((step) => step?.classList.add('hidden'));
+
+    if (stepNumber === 1) step1?.classList.remove('hidden');
+    if (stepNumber === 2) step2?.classList.remove('hidden');
+    if (stepNumber === 3) step3?.classList.remove('hidden');
+    if (stepNumber === 4) step4?.classList.remove('hidden');
+  }
+
+  function buildWhatsappLink() {
+    const text = encodeURIComponent(
+      `Hola, vengo desde la web de Optymia.
+Tema: ${leadData.tema}
+Nombre: ${leadData.nombre}
+Email: ${leadData.email}
+Teléfono: ${leadData.telefono}
+Empresa: ${leadData.empresa || '-'}
+Detalle: ${leadData.detalle}`
+    );
+
+    if (whatsappLink) {
+      whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${text}`;
+    }
+  }
+
+  function resetChat() {
+    leadData = {
+      tema: '',
+      nombre: '',
+      email: '',
+      telefono: '',
+      empresa: '',
+      detalle: '',
+    };
+
+    if (formStep1) formStep1.reset();
+    if (formStep2) formStep2.reset();
+    if (topicInput) topicInput.value = '';
+    showStep(1);
+    closeChat();
+  }
+
+  toggleBtn?.addEventListener('click', openChat);
+  nudgeBtn?.addEventListener('click', openChat);
+  closeBtn?.addEventListener('click', closeChat);
+
+  optionButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-value') || '';
+      leadData.tema = value;
+      if (topicInput) topicInput.value = value;
+      openChat();
+      showStep(2);
+    });
+  });
+
+  back1?.addEventListener('click', () => showStep(1));
+  back2?.addEventListener('click', () => showStep(2));
+
+  formStep1?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(formStep1);
+    leadData.nombre = String(formData.get('nombre') || '');
+    leadData.email = String(formData.get('email') || '');
+    leadData.telefono = String(formData.get('telefono') || '');
+    leadData.empresa = String(formData.get('empresa') || '');
+
+    showStep(3);
+  });
+
+  formStep2?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(formStep2);
+    leadData.detalle = String(formData.get('detalle') || '');
+
+    buildWhatsappLink();
+
+    console.log('Lead chatbot Optymia:', leadData);
+
+    // Aquí después conectamos n8n / webhook / HubSpot / correo
+    showStep(4);
+  });
+
+  restartBtn?.addEventListener('click', resetChat);
+
+  // Pequeño nudge automático tras unos segundos
+  window.setTimeout(() => {
+    if (!windowBox || windowBox.classList.contains('hidden')) {
+      nudgeBtn?.classList.remove('hidden');
+    }
+  }, 2500);
+</script>
