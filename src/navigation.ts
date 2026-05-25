@@ -7,10 +7,6 @@ export const headerData = {
       href: '/',
     },
     {
-      text: 'Empresa',
-      href: getPermalink('/empresa'),
-    },
-    {
       text: 'Soluciones',
       href: getPermalink('/soluciones'),
     },
@@ -38,7 +34,7 @@ export const footerData = {
       title: 'Empresa',
       links: [
         { text: 'Inicio', href: getPermalink('/') },
-        { text: 'Empresa', href: getPermalink('/empresa') },
+        { text: 'Soluciones', href: getPermalink('/soluciones') },
         { text: 'Contacto', href: getPermalink('/contacto') },
       ],
     },

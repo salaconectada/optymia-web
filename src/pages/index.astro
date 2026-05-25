@@ -7,6 +7,7 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -175,6 +176,83 @@ const metadata = {
 </CallToAction>
 
   <!-- HighlightedPosts Widget ******* -->
+
+<!-- Steps2 Widget ****************** -->
+
+  <Steps2
+  title="Principios que guían nuestro trabajo"
+  subtitle="En Optymia creemos que la tecnología y la analítica deben estar al servicio de decisiones más informadas, procesos más eficientes y organizaciones más competitivas."
+  items={[
+    {
+      title: 'Rigor analítico',
+      description:
+        'Aplicamos metodologías científicas, modelos estadísticos y análisis de datos para generar soluciones confiables y trazables.',
+    },
+    {
+      title: 'Enfoque en impacto',
+      description:
+        'Cada proyecto busca generar mejoras concretas en eficiencia, calidad, control operacional o toma de decisiones.',
+    },
+    {
+      title: 'Integración tecnológica',
+      description:
+        'Diseñamos soluciones que se integran con los sistemas y procesos existentes, priorizando continuidad operacional.',
+    },
+  ]}
+>
+<Fragment slot="bg">
+    <div class="absolute inset-0 bg-gray-50 dark:bg-transparent"></div>
+  </Fragment>
+</Steps2>
+
+<!-- Features2 Widget ************** -->
+
+    <Features2
+    title="Sectores donde generamos impacto"
+    tagline="Industrias"
+    columns={4}
+    items={[
+      {
+        title: 'Minería',
+        description: 'Optimización operacional, monitoreo de variables críticas y análisis para mejorar eficiencia y control.',
+      },
+      {
+        title: 'Alimentos',
+        description: 'Control de calidad, trazabilidad, analítica de procesos y aplicación de tecnologías de medición.',
+      },
+      {
+        title: 'Manufactura',
+        description: 'Reducción de variabilidad, automatización de reportes y soporte a decisiones basadas en datos.',
+      },
+      {
+        title: 'Laboratorios',
+        description: 'Gestión de datos, control analítico, trazabilidad metrológica y estandarización de procesos.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+    <Features2
+  title="¿Quieres optimizar procesos o mejorar el control de calidad en tu organización?"
+  tagline="Hablemos"
+  columns={2}
+  items={[
+    {
+      title: 'Solicitar diagnóstico',
+      description:
+        'Conversemos sobre tus procesos, datos disponibles y oportunidades de mejora. Podemos evaluar cómo aplicar analítica avanzada, automatización o desarrollo de software en tu organización.',
+      icon: 'tabler:chart-dots',
+    },
+    {
+      title: 'Explorar soluciones',
+      description:
+        'Descubre cómo las tecnologías de analítica, ciencia de datos, NIR, automatización y Business Intelligence pueden generar mejoras reales en eficiencia y calidad.',
+      icon: 'tabler:bulb',
+    },
+  ]}
+/>
+
 
 <BlogLatestPosts
   title="Conocimiento y tecnología aplicada"
