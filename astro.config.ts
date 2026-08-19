@@ -58,6 +58,9 @@ export default defineConfig({
       HTML: {
         'html-minifier-terser': {
           removeAttributeQuotes: false,
+          // Preserve HTML comments: needed for Cloudflare's <!--email_off--> marker
+          // (used in contacto.astro) to survive the build and keep working.
+          removeComments: false,
         },
       },
       Image: false,
