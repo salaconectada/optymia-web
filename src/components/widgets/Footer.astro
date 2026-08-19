@@ -67,17 +67,25 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
             <div class="text-white font-semibold mb-3">{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm space-y-2">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li>
-                    <a
-                      class="text-slate-300 hover:text-cyan-300 hover:underline transition duration-150 ease-in-out"
-                      href={href}
-                      aria-label={ariaLabel}
-                    >
-                      <Fragment set:html={text} />
-                    </a>
-                  </li>
-                ))}
+                {links.map(({ text, href, ariaLabel }) =>
+                  href ? (
+                    <li>
+                      <a
+                        class="text-slate-300 hover:text-cyan-300 hover:underline transition duration-150 ease-in-out"
+                        href={href}
+                        aria-label={ariaLabel}
+                      >
+                        <Fragment set:html={text} />
+                      </a>
+                    </li>
+                  ) : (
+                    <li>
+                      <span class="text-slate-400">
+                        <Fragment set:html={text} />
+                      </span>
+                    </li>
+                  )
+                )}
               </ul>
             )}
           </div>

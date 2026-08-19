@@ -41,19 +41,19 @@ export const footerData = {
     {
       title: 'Soluciones',
       links: [
-        { text: 'Analítica avanzada', href: getPermalink('/soluciones') },
-        { text: 'Optimización de procesos', href: getPermalink('/soluciones') },
-        { text: 'Business Intelligence', href: getPermalink('/soluciones') },
-        { text: 'Desarrollo de software', href: getPermalink('/soluciones') },
+        { text: 'Analítica avanzada', href: `${getPermalink('/soluciones')}#analitica-avanzada` },
+        { text: 'Optimización de procesos', href: `${getPermalink('/soluciones')}#optimizacion-de-procesos` },
+        { text: 'Business Intelligence', href: `${getPermalink('/soluciones')}#business-intelligence` },
+        { text: 'Desarrollo de software', href: `${getPermalink('/soluciones')}#desarrollo-de-software` },
       ],
     },
     {
       title: 'Tecnologías',
       links: [
-        { text: 'Ciencia de datos', href: getPermalink('/tecnologias') },
-        { text: 'Machine Learning', href: getPermalink('/tecnologias') },
-        { text: 'NIR y analítica', href: getPermalink('/tecnologias') },
-        { text: 'Dashboards y trazabilidad', href: getPermalink('/tecnologias') },
+        { text: 'Ciencia de datos' },
+        { text: 'Machine Learning' },
+        { text: 'NIR y analítica' },
+        { text: 'Dashboards y trazabilidad' },
       ],
     },
     {
